@@ -1,0 +1,112 @@
+$primary-color: #f45e1f;
+$secondary-color: #273164;
+
+$body-font-family: "Avenir Next LT Pro", sans-serif;
+$text-color: #b4b4b4;
+$text-color-dark: #676f92;
+
+$medium: 640px;
+$large: 1024px;
+
+$light-bg: #f6f7fb;
+
+@import "normalize";
+@import "layout";
+@import "elements";
+@import "fonts";
+
+body {
+  font: 400 14px/1.5 $body-font-family;
+  color: $text-color;
+}
+
+/* Layout */
+.ba-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 1230px;
+  width: 100%;
+}
+.ba-container-small {
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &hover {
+    color: $secondary-color;
+  }
+}
+
+p {
+  margin: 0 0 30px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 30px;
+  line-height: 1;
+  font-weight: 500;
+  color: $secondary-color;
+}
+h1 {
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #fff;
+
+  @media screen and (min-width: $medium) {
+    font-size: 65px;
+  }
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+
+.ba-section {
+  padding: 40px 0;
+
+  @media screen and (min-width: $medium) {
+    padding: 80px 0;
+  }
+  &--light-bg {
+    background: $light-bg;
+    @media screen and (min-width: $large) {
+      padding: 159px 0;
+    }
+  }
+  &--services {
+    padding-top: 0;
+  }
+  &--clean {
+    padding-top: 0;
+    @media screen and (min-width: $medium) {
+      background: url(../img/clear-bg.png) no-repeat 400px 50%;
+    }
+    @media screen and (min-width: $large) {
+      background: url(../img/clear-bg.png) no-repeat 600px 50%;
+    }
+
+    @media screen and (min-width: 1230px) {
+      background: url(../img/clear-bg.png) no-repeat 100% 50%;
+    }
+  }
+}
+
+@import "header";
+@import "section-intro";
+@import "section-services";
+@import "section-booking";

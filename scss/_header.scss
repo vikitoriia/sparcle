@@ -1,0 +1,138 @@
+
+.ba-header{
+	/* background: #ccc; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index:1;
+	background-size:cover;
+}
+.ba-menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+
+	a{
+		text-decoration: none;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	@media screen and (min-width:$large){
+		display: flex;
+		align-items: center;
+		border-bottom: 2px solid rgba(#fff, .25);
+		margin-right: 60px;
+
+		a{
+			padding: 15px 0 19px;
+			position: relative;
+			display: block;
+			&:after{
+				content: '';
+				position: absolute;
+				top: 100%;
+				height: 6px;
+				left: -8px;
+				right: -8px;
+
+				margin-top: -3px; 
+				background: $primary-color;
+
+				transition: transform 0.2s;
+				transform: scaleX(0);
+			}
+			&:hover{
+				&:after{
+					transform: scaleX(1);
+				}
+			}
+		}
+		li + li{
+			margin-left: 60px;
+		}
+	}
+}
+
+.ba-main-nav{
+	@media screen and (min-width:$large){
+		display: flex;
+		padding-top: 13px;
+	}
+	@media screen and (max-width:$large - 1px){
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		left: 0;
+		top: 0;
+		background-color: rgba(#000, 0.8);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.8);
+		transition: 0.2s;
+		transition-property: transform, opacity, visibility;
+
+		&.active{
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+		}
+
+		.ba-menu{
+			a{
+				font-size: 20px;
+				margin-bottom: 25px;
+				display: block;
+			}
+		}
+	}
+}
+.ba-menu-toggle{
+	border:none;
+	background: none;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	min-width: initial;
+	padding: 0;
+	height: auto;
+	line-height: 1;
+	margin-top: 17px;
+	&:hover, &:focus{
+		background: none;
+		color: $primary-color;
+		border: none;
+	}
+}
+.ba-menu-toggle svg{
+	fill:currentColor;
+}
+
+@media (min-width: $large){
+	.ba-menu-toggle{
+		display: none;
+	}
+}
+
+.ba-logo img{
+	display: block;
+}
+
+.ba-header-bar{
+	padding-top: 23px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+

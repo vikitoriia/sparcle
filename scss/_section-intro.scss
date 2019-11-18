@@ -1,0 +1,94 @@
+.ba-section-intro{
+	background: #44464d url(../img/intro-bg.jpg) 50% no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+
+	color: #fff;
+	padding: 120px 0 80px;
+	display: flex;
+	align-items: center;
+	
+
+	@media screen and (min-width:$medium){
+		padding: 200px 0 120px;		
+	}
+
+	
+	&__inner{
+		@media screen and (min-width:$large){
+			max-width: 770px;
+			padding-left: 70px;
+		}
+	}
+	&__body{
+		max-width: 430px;
+		font-size: 15px;
+		line-height: 1.7;
+		margin-bottom: 40px
+	}
+	&__actions{
+		margin-bottom: 50px;
+		display: flex;
+		flex-wrap: wrap;
+
+		@media screen and (min-width:1200px){
+			margin-bottom: 173px;			
+		}
+		
+		a{
+			margin-bottom: 15px;
+		}
+
+		@media screen and (min-width:$medium){
+			a + a{
+				margin-left: 26px;
+			}			
+		}
+
+	}
+	
+}
+
+.ba-learn-more{
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	max-width: 620px;
+
+	&:hover{
+		color: #fff;
+		&:after{
+			transform: rotate(90deg);
+		}
+	}
+
+	&:before, &:after{
+		content:'';
+		opacity: 0.8;
+
+		transition: transform 0.3s;
+	}
+	&:before{
+		flex-grow: 1;
+		height: 1px;
+		background: currentColor;
+		order: 1;
+		margin-left: 30px;
+	}
+	&:after{
+		width: 62px;
+		height: 62px;
+		border: 1px solid currentColor;
+		border-radius: 50%;
+		order: 2;
+
+		background: url('data:image/svg+xml,\
+		<svg xmlns="http://www.w3.org/2000/svg" width="6px" height="12px">\
+		<path fill="white"\
+        d="M0.676,0.124 C0.599,0.041 0.502,-0.000 0.396,-0.000 C0.290,-0.000 0.193,0.041 0.116,0.124 C-0.038,0.289 -0.038,0.558 0.116,0.724 L5.036,6.000 L0.116,11.276 C-0.038,11.441 -0.038,11.710 0.116,11.876 C0.271,12.041 0.521,12.041 0.676,11.876 L5.884,6.300 C6.039,6.134 6.039,5.865 5.884,5.700 L0.676,0.124 Z"/>\
+      </svg>') 50% no-repeat;
+	}
+}

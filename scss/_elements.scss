@@ -1,0 +1,117 @@
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+
+	font: 500 15px/42px $body-font-family;
+	background: #fff;
+	border-radius: 23px;
+	text-decoration: none;
+	border: 1px solid #d1d3de;
+	color: $text-color-dark;
+	height: 45px;
+	min-width: 160px;
+	text-align: center;
+	padding: 0 15px;
+
+	&:hover{
+		background-color: $text-color-dark;
+		color: #fff;
+	}
+}
+.ba-button{
+
+	&--light{
+		border-color: #fff;
+		background-color: #fff9f6;
+		color: $primary-color;
+
+		&:hover{
+			border-color: $primary-color;
+			background-color: $primary-color;
+			color: #fff;
+		}		
+	}
+	&--hollow{
+		border-color: #fff;
+		background-color: transparent;
+		color: #fff;
+
+		&:hover{
+			background-color: #fff;
+			color: $text-color-dark;
+		}
+	}
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  transition: color 0.3s ease-in, border-color 0.3s ease-in,
+    background-color 0.3s ease-in, opacity 0.3s ease-in, box-shadow 0.2s ease-in;
+  display: block;
+  width: 100%;
+background:none;
+  border: none;
+  border-bottom: 2px solid rgba(#fff, 0.4);
+
+  border-radius: 0;
+  font-size: 14px;
+  color: rgba(#fff, 0.4);
+  line-height: 1.2;
+  padding: 9px 0;
+  margin-bottom: 25px;
+
+  &:focus{
+	  outline: none;
+  }
+}
+
+
+textarea {
+
+}
+
+
+.ba-float-label {
+	position: relative;
+ }
+ 
+ .ba-float-label__input::placeholder {
+	color: transparent;
+ }
+ .ba-float-label__placeholder {
+	font-size: 10px;
+	color:rgba(#fff, 0.4);
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	bottom: 9px;
+	text-transform: uppercase;
+ 
+	transition: transform 0.2s, color 0.2s;
+ }
+ .ba-float-label__input:not(:placeholder-shown) ~ .ba-float-label__placeholder,
+ .ba-float-label__input:focus ~ .ba-float-label__placeholder {
+	transform: translateY(-20px);
+	color: $primary-color;
+ }
+ .ba-float-label__input:not(:placeholder-shown):valid {
+	border-color: #2ed573;
+ }
+ .ba-float-label__input:not(:placeholder-shown):invalid {
+	border-color: #ff4757;
+ }
